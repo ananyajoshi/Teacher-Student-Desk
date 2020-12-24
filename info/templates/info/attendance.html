@@ -23,13 +23,13 @@
                     {% for a in att_list %}
                     <tr>
                         <td>{{ a.course_id }}</td>
-                        <td><a href="{% url 'attendance_detail' a.student.USN a.course.id %}">{{a.course.name}}</a></td>
+                        <td ><a class="text-dark" href="{% url 'attendance_detail' a.student.USN a.course.id %}">{{a.course.name}}</a></td>
                         <td>{{ a.att_class }}</td>
                         <td>{{ a.total_class }}</td>
                         {% if a.attendance < 75 %}
-                            <td class="p-3 mb-2 bg-danger text-white">{{ a.attendance }}</td>
+                            <td class="p-3 mb-2  text-white" style="background-color: #EF5350;">{{ a.attendance }}</td>
                         {% else %}
-                            <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td>
+                            <td class="p-3 mb-2 text-white" style="background-color: #4CAF50;">{{ a.attendance }}</td>
                         {% endif %}
                         <td>{{ a.classes_to_attend }}</td>
                     </tr>
